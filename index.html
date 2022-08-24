@@ -5,11 +5,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <title>QuizApp</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wight@200;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script4.js"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script defer src="scripts/questionService.js"></script>
+    <script defer src="scripts/cookieService.js"></script>
+    <script defer src="scripts/main.js"></script>
     <script src="https://kit.fontawesome.com/a90b2d5158.js" crossorigin="anonymous"></script>
 </head>
 
@@ -20,30 +22,30 @@
                 <div class="info">
                     <i class="fa-solid fa-ranking-star"></i>
                 </div>
-                <h1>QuizApp</h1>
+                <h1 class="gradient">QuizApp</h1>
             </div>
             <div class="quiz-categories">
                 <h2>Select a category:</h2>
                 <ul class="categories-list">
-                    <li id="Film" value="11" class="category-btn"><i class="fa-solid fa-film"></i>Film</li>
-                    <li id="Computers" value="18" class="category-btn"><i class="fa-solid fa-computer"></i>Computers
+                    <li id="Film" value="11" class="category-btn"><i class="fa-solid fa-film gradient"></i>Film</li>
+                    <li id="Computers" value="18" class="category-btn"><i class="fa-solid fa-computer gradient"></i>Computers
                     </li>
-                    <li id="Sports" value="21" class="category-btn"><i class="fa-solid fa-futbol"></i>Sports</li>
-                    <li id="History" value="23" class="category-btn"><i class="fa-solid fa-landmark"></i>History</li>
+                    <li id="Sports" value="21" class="category-btn"><i class="fa-solid fa-futbol gradient"></i>Sports</li>
+                    <li id="History" value="23" class="category-btn"><i class="fa-solid fa-landmark gradient"></i>History</li>
                     <li id="Geography" value="22" class="category-btn"><i
-                            class="fa-solid fa-earth-americas"></i>Geography
+                            class="fa-solid fa-earth-americas gradient"></i>Geography
                     </li>
-                    <li id="Music" value="12" class="category-btn"><i class="fa-solid fa-music"></i>Music</li>
+                    <li id="Music" value="12" class="category-btn"><i class="fa-solid fa-music gradient"></i>Music</li>
                     <li id="Mathematics" value="19" class="category-btn"><i
-                            class="fa-solid fa-calculator"></i>Mathemtaics
+                            class="fa-solid fa-calculator gradient"></i>Mathemtaics
                     </li>
-                    <li id="Art" value="25" class="category-btn"><i class="fa-solid fa-image"></i>Art</li>
+                    <li id="Art" value="25" class="category-btn"><i class="fa-solid fa-image gradient"></i>Art</li>
                 </ul>
             </div>
         </div>
         <div class="question-container hide">
             <div class="question-info-panel flex">
-                <h3 id="selected-category"></h3>
+                <h3 id="selected-category" class="gradient"></h3>
                 <div class="question-counter">
                     <span id="current-question"> </span> /10
                 </div>
@@ -59,12 +61,11 @@
                     </div>
                 </div>
             </template>
-         
         </div>
         <div class="result-container hide">
             <div class="score flex">
                 <h3>Your score:</h3>
-                <span id="percent">50%</span><br>
+                <span id="percent" class="gradient">50%</span><br>
                 <span id="points">5/10</span>
             </div>
             <div class="result-buttons">
@@ -75,18 +76,13 @@
     </div>
 
     <div class="modal-shadow">
-        <div class="modal">
-            <div class="modal-head flex">
+        <div class="history-container">
+            <div class="flex">
                 <i class="fa-solid fa-xmark"></i>
-                <h3>Your results</h3>
+                <h3 class="gradient">Your results</h3>
             </div>
-            <ul class="history-list">
-                <!-- <li>udshfsdhjhjfhd <span class="p">50%</span></li>
-                <li>udshfsdh jhjfhd</li>
-                <li>udshfsdh jhjfhd</li>
-                <li>udshfsdh jhjfhd</li> -->
-            </ul>
-       
+            <p id="result-msg">History is empty</p>
+            <ul class="history-list"></ul>
         </div>
     </div>
 </body>
